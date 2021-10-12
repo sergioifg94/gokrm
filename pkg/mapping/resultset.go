@@ -22,7 +22,7 @@ func (m *MappedResultSet) GetResult(key string) (interface{}, bool) {
 }
 
 func (m *MappedResultSet) GetAllResults() map[string]interface{} {
-	results := map[string]interface{}{}
+	var results = make(map[string]interface{})
 
 	for key, result := range m.results {
 		results[key] = result

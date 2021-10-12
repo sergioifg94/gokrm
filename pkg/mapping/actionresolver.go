@@ -13,7 +13,7 @@ func ActionResolverComposedOf(resolvers ...MappingActionResolver) *CompositeActi
 }
 
 func (r *CompositeActionResolver) ResolveMappingActions(source interface{}) ([]MappingAction, error) {
-	actions := []MappingAction{}
+	var actions []MappingAction
 
 	for _, resolver := range r.Resolvers {
 		resolvedActions, err := resolver.ResolveMappingActions(source)
